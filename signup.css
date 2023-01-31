@@ -1,0 +1,19 @@
+*{
+    margin: 0%;
+    padding: 0%;
+
+}
+body{
+background-image: url("./assets/redJeep2.jpg");
+background-position-x: 100%;
+background-size: cover;
+background-position: 100%;
+background-clip: inherit;
+}
+.form1{
+    margin: auto; 
+    position: relative;
+    padding-left: 450px;
+    padding-right: 450px;
+    padding-top: 10px;
+}
