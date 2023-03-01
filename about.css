@@ -3,9 +3,14 @@
     margin:0%;
 }
 .body1{
-background-image: url("./");
-background-position-x: 100%;
-background-size: cover;
-background-position: 100%;
-background-clip: inherit;
+    background:url(./assets/pr.jpg);
+    background-position-x: 100%;
+    background-size: cover;
+    background-position: 100%;
+    background-clip: inherit;
+    color:slategray;
+}
+img{
+    object-fit: cover;
+    object-position: top;
 }
