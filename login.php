@@ -1,54 +1,28 @@
 <?php
+session_start();
+include 'config.php';
 
-if($_SERVER ["REQUEST_METHOD"]==='POST'){
-    include 'config.php';
+if(isset($_POST['submit'])){
 $name = $_POST['name'];
 $password = $_POST['password'];
+
 $sql="select * from users where name='$name' and password = '$password'";
-    $results= mysqli_query($con, $sql);
-    $num= mysqli_num_rows($result);  
-    if($num>0){
-      session_start();
-      $_SESSION['name']=$name;
-     Header ('Location:landingpage.php');
-    }else{
-echo'invalid input';
-         
- }
+$results= mysqli_query($con, $sql);
+$res = mysqli_fetch_all($results);
+$num= mysqli_num_rows($results);  
+
+if($num > 0){
+    $_SESSION['name'] = $name;
+    header('location: landingpage.php');
+}else{
+    echo "invalid input";
+}
+
 }
 ?>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -63,7 +37,7 @@ echo'invalid input';
     <h1 class="car1" class="text-white">CAR RENTAL MANAGEMENT SYSTEM</h1>
 <div class="form1">
 
-   <form>
+   <form method="POST" action="#">
     <h2 style= "text-align: center" class="text-white"> login here </h2>
 
    <div class="form-group">
@@ -79,7 +53,7 @@ echo'invalid input';
 <div style="padding-left: 20%; padding-right:20%; padding-top:10px;">
   
 
-  <input type = "submit" value = " login " class="text-center form-control text-bg-primary"/><br />
+  <input type = "submit" name="submit" value = " login " class="text-center form-control text-bg-primary"/><br />
   </div>
 <div>
     <p>
