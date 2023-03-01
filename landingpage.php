@@ -41,7 +41,7 @@
 
 <div>
 <h1 class="landing">WELCOME TO REGIE MOTORS</h1>
-    <p class="text-center text-black"> we offer quality services. Make a reservation with us.
+    <p class="text-center"> we offer quality services. Make a reservation with us.
       <br>
       Thank you.
     </p>
