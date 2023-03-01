@@ -15,13 +15,13 @@ include 'header.php';
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="categories.css">
+    <link rel="stylesheet" href="./categories.php">
     <title>car rental management system</title>
   </head>
   <body class="bg-info">
     <h1 class="text-center pt-5 pb-5"> Please check our available cars</h1>
-
-   <?php
+  <div class="container">
+  <?php
    include 'config.php';
    $sql = "SELECT * FROM cars";
    $result = mysqli_query($con, $sql);
@@ -33,12 +33,6 @@ include 'header.php';
       $name = $row['carName'];
       $price = $row['carPrice'];
        echo"
-      <div class='container1>>
-       
-      
-       <div class='row'>
-       <div class ='col-md-4' style='float:left; display:block;'>
-       <div class='card-deck'>
       <div class='card boarder-info p-2 my-5' style=' width:350px; height:450px;' > 
       <img class='card-img-top max-width-100%' src=  '$image' style:'height: 100px; position: absolute;  max-width:100%;'>
      
@@ -49,16 +43,14 @@ include 'header.php';
    <a href='order.php? orderid='. $id.'  class= 'btn btn-danger btn-block btn-lg p-2' > Book Now </a>
    </div>
    </div>
-     </div>
-    </div>
-   </div>
-   </div>
     ";
-     }
-   }
-    mysqli_error($con);
+  }
+}
+mysqli_error($con);
 
 
 ?>
+  </div>
+  
 </body>
 </html>
