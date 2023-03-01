@@ -1,7 +1,7 @@
 <?php
   include "config.php";
 if(isset($_POST['submit'])){
-/*  include "config.php";
+ include "config.php";
   if(empty($_POST['name'])){
     die('name is required');
 }
@@ -14,21 +14,15 @@ if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
 }else{
     $email= trim(htmlspecialchars($_POST['email']));
 }
-if(strlen($_POST['password'])<8){
+if(strlen($_POST['password'])<6){
     die('password should contain atleast 8 characters');
 }
 if(!preg_match('/[a-z]/i' , $_POST['password'])){
     die('the password should contain atleast one letter');
 }
-if(!preg_match('/[0-9]/' , $_POST['password'])){
-    die('the password should contain atleast one number');
-}
 
-if($_POST['password'] !== $_POST['password_confirmation']){
-    die("passwords must match");
-}
 
-$password_hash = password_hash($_POST['password'] ,PASSWORD_DEFAULT);*/
+//$password_hash = password_hash($_POST['password'] ,PASSWORD_DEFAULT);
    $name= $_POST['name'];
    $identificationNo=$_POST['identificationNo'];
    // $licenceNo= $_POST['licenceNo'];
@@ -36,7 +30,7 @@ $password_hash = password_hash($_POST['password'] ,PASSWORD_DEFAULT);*/
     $password= $_POST['password'];
   
     $sql ="INSERT INTO users (name, identificationNo, licenceNo, email, password)
-    VALUES('$name', '$identificationNo', '$email','$password')";
+    VALUES('$name', '$identificationNo','','$email','$password')";
     $result = mysqli_query($con, $sql);
     if($result){
     header('location:login.php');
@@ -48,32 +42,7 @@ $password_hash = password_hash($_POST['password'] ,PASSWORD_DEFAULT);*/
   }
 ?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
