@@ -1,11 +1,7 @@
 <?php 
     
 ?>
-</div>
 
-      
-      
-    
    <div class="container">
     <div class="row col-lg-4 mt-3 mb-3">
   

@@ -15,8 +15,11 @@ include 'header.php';
 <link rel="stylesheet" href="book.css">
     <title>car rental management system</title>
   </head>
-  <body>
-    <h4> Fill the following details to complete your </h4>
+  <body class="bg-info text-white">
+    <div class="container mt-4">
+      <h4> Fill the following details to complete your booking</h4>
+
+    </div>
 
   </body>
 </html>
