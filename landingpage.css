@@ -4,7 +4,7 @@
   
 }
 body{
-    background-image: url("./assets/black\ jeep.jpg");
+    background-image: url('./assets/Bjeep.jpg');
     background-repeat: none;
     background-size: cover;
 

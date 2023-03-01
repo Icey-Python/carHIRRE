@@ -1,3 +1,78 @@
+<?php
+  include "config.php";
+if(isset($_POST['submit'])){
+/*  include "config.php";
+  if(empty($_POST['name'])){
+    die('name is required');
+}
+else {
+    $name = trim(htmlspecialchars($_POST['name']));
+}
+
+if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+    die('valid email is reguired');
+}else{
+    $email= trim(htmlspecialchars($_POST['email']));
+}
+if(strlen($_POST['password'])<8){
+    die('password should contain atleast 8 characters');
+}
+if(!preg_match('/[a-z]/i' , $_POST['password'])){
+    die('the password should contain atleast one letter');
+}
+if(!preg_match('/[0-9]/' , $_POST['password'])){
+    die('the password should contain atleast one number');
+}
+
+if($_POST['password'] !== $_POST['password_confirmation']){
+    die("passwords must match");
+}
+
+$password_hash = password_hash($_POST['password'] ,PASSWORD_DEFAULT);*/
+   $name= $_POST['name'];
+   $identificationNo=$_POST['identificationNo'];
+   // $licenceNo= $_POST['licenceNo'];
+    $email= $_POST['email'];
+    $password= $_POST['password'];
+  
+    $sql ="INSERT INTO users (name, identificationNo, licenceNo, email, password)
+    VALUES('$name', '$identificationNo', '$email','$password')";
+    $result = mysqli_query($con, $sql);
+    if($result){
+    header('location:login.php');
+    }else{ 
+       die(mysqli_error($con));
+    }
+
+
+  }
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,7 +88,7 @@
     <div class="form1">
     <h2 style= "text-align: center" class="text-white"> Signup Here </h2>
    <div class="container my-15">
-   <form >
+   <form action="signuppage.php" method="POST" >
    <div class="form-group">
     <label for="Name" class="text-white">UserName:</label>
     <input type="text" class="form-control" id="name1" placeholder="Please enter your name" name="name" autocomplete="off">
@@ -21,13 +96,13 @@
 
   <div class="form-group">
     <label for="Name" class="text-white">Identification NO:</label>
-    <input type="text" class="form-control" id="name1" placeholder="Please enter your identification number" name="name" autocomplete="off">
+    <input type="number" class="form-control" id="name1" placeholder="Please enter your identification number" name="identificationNo" autocomplete="off">
   </div>
 
-  <div class="form-group">
+ <!--<div class="form-group">
     <label for="Name" class="text-white">Licence NO:</label>
-    <input type="text" class="form-control" id="name1" placeholder="Please enter your license number" name="name" autocomplete="off">
-  </div>
+    <input type="number" class="form-control" id="name1" placeholder="Please enter your license number" name="LicenceNo" autocomplete="off">
+  </div>-->
   
 
   <div class="form-group">
@@ -38,12 +113,12 @@
 
   <div class="form-group">
     <label for="Password" class="text-white">Password:</label>
-    <input type="password" class="form-control" id="Password1" autocomplete="off" name="password">
+    <input type="password" class="form-control" id="Password1" autocomplete="off" name="password" placeholder="enter your password">
   </div>
-
+ 
   <div style="padding-left: 45%;">
-  <button type="submit" class="btn btn-primary"name= "submit" ><a href="landingpage.php" class="text-light">submit</a></button>
-  </div>
+  <button type="submit" class="btn btn-primary"name= "submit">submit</button>
+</div>
    </form>
    </div>
   </body>

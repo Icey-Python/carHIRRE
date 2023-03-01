@@ -4,7 +4,7 @@ padding: 0%;
 box-sizing: border-box;
 }
 body{
-background-image: url("/assets/redJeep.jpg");
+background-image: url("./assets/Bjeep.jpg");
 background-repeat: none;
  background-size: cover;
 }

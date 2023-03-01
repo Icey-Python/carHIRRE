@@ -1,3 +1,52 @@
+<?php
+
+if($_SERVER ["REQUEST_METHOD"]==='POST'){
+    include 'config.php';
+$name = $_POST['name'];
+$password = $_POST['password'];
+$sql="select * from users where name='$name' and password = '$password'";
+    $results= mysqli_query($con, $sql);
+    $num= mysqli_num_rows($result);  
+    if($num>0){
+      session_start();
+      $_SESSION['name']=$name;
+     Header ('Location:landingpage.php');
+    }else{
+echo'invalid input';
+         
+ }
+}
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!doctype html>
 <html lang="en">
@@ -15,10 +64,10 @@
 <div class="form1">
 
    <form>
-    <h2 style= "text-align: center" class="text-white"> login </h2>
+    <h2 style= "text-align: center" class="text-white"> login here </h2>
 
    <div class="form-group">
-    <label for="Name" class="text-white">UserName:</label>
+    <label for="Name" class="text-white">Username:</label>
     <input type="text" class="form-control" id="name1" placeholder="Please enter your name" name="name" autocomplete="off">
   </div>
   
@@ -27,6 +76,11 @@
   <input type="text" class="form-control" id="name1" placeholder="Please enter your Password" name="password" autocomplete="off">
 </div>
 
+<div style="padding-left: 20%; padding-right:20%; padding-top:10px;">
+  
+
+  <input type = "submit" value = " login " class="text-center form-control text-bg-primary"/><br />
+  </div>
 <div>
     <p>
        or <br>

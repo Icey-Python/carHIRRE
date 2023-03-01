@@ -15,7 +15,7 @@ include 'header.php';
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<!--<link rel="stylesheet" href="categories.css">-->
+    <link rel="stylesheet" href="categories.css">
     <title>car rental management system</title>
   </head>
   <body class="bg-info">
@@ -23,39 +23,42 @@ include 'header.php';
 
    <?php
    include 'config.php';
-   $sql = "SELECT*FROM cars";
+   $sql = "SELECT * FROM cars";
    $result = mysqli_query($con, $sql);
-   if($result){
-    while($row =mysqli_fetch_array($result)){
+  if($result){
+  while($row =mysqli_fetch_array($result)){
+  
        $id = $row['id'];
-      $carImage = $row['carImage'];
+      $image =$row['carImage'];
       $name = $row['carName'];
       $price = $row['carPrice'];
-       echo'
-   <div class="container">
-    <div class="row col-lg-4 mt-3 mb-3">
-  
-  <div class="card-deck" >
-   <div class="card boarder-info p-2" style= "height:500px; width; 500px"> 
-   <img class="card-img-top" src= "./images/'.$carImage.'" / style="height: 300px;">
+       echo"
+      <div class='container1>>
+       
+      
+       <div class='row'>
+       <div class ='col-md-4' style='float:left; display:block;'>
+       <div class='card-deck'>
+      <div class='card boarder-info p-2 my-5' style=' width:350px; height:450px;' > 
+      <img class='card-img-top max-width-100%' src=  '$image' style:'height: 100px; position: absolute;  max-width:100%;'>
+     
+   <div class=' card-body'>
+       <h4 class='card-tittle'> Name:  $name </h4>
+       <br>
+       <h4 class='card-tittle'> Price:   $price / day</h4>
+   <a href='order.php? orderid='. $id.'  class= 'btn btn-danger btn-block btn-lg p-2' > Book Now </a>
+   </div>
+   </div>
+     </div>
+    </div>
+   </div>
+   </div>
+    ";
+     }
+   }
+    mysqli_error($con);
 
-<br>
-<br>
-<br>
-<div class=" card-body">
-    <h4 class="card-tittle"> Name: ' . $name . '</h4>
-    <br>
-    <h4 class="card-tittle"> Price:  ' . $price . ' / day</h4>
-<a href="order.php? orderid=' . $id . ' "  class= "btn btn-danger btn-block btn-lg p-2" > Book Now </a>
-</div>
-  </div>
-  </div>
- </div>
- </div>
- ';
-  
- } 
-  }else mysqli_error($con);
+
 ?>
 </body>
 </html>

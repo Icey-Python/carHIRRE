@@ -12,12 +12,12 @@ if (isset($_POST['submit'])) {
 
     $target = "images/" . basename($_FILES['carImage']["name"]);
   
-    $car_image = $_FILES['carImage']['name'];
+    $car_image = "./images/".$_FILES['carImage']['name'];
     move_uploaded_file($_FILES['carImage']['tmp_name'], $target);
     $Cname = $_POST['carName'];
     $Cprice = $_POST['carPrice'];
     $sql = "INSERT INTO cars (carImage, carName, carPrice)
-    VALUES(' $car_image', '$Cname',' $Cprice')";
+    VALUES('$car_image', '$Cname',' $Cprice')";
     $result = mysqli_query($con, $sql);
     if ($result) {
         $msg = "car information added to the database successfully!";

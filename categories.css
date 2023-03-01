@@ -1,12 +1,13 @@
 *{
     padding: 0%;
     margin: 0%;
+    box-sizing: border-box;
 }
-.carimages{
-    padding-top: 0px;
-    padding-bottom: 50px;
-    display: flex;
-    justify-content: space-between;
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+.container1{
+  
+
+}
+ .card{
+   float:left;
+   display: block;
 }

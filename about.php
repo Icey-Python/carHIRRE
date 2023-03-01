@@ -27,7 +27,7 @@ include 'header.php';
 
 <div class="card-deck mx-1 pt-5">
     <div class="card" style="width:300px;">
-  <img class="card-img-top" src="./assets/regie.jpg"  style="height: 300px" alt="Card image">
+  <img class="card-img-top" src="./images/regie.jpg"  style="height: 300px" alt="Card image">
   <div class="card-body">
     <h4 class="card-title">Regie</h4>
     <p class="card-text">I was so impressed by their customer service. They are very reliable and promote safety of their customer's credentials. I always refer my friends to regie motors.</p>
@@ -35,15 +35,15 @@ include 'header.php';
   </div>
 </div>
 <div class="card" style="width:300px;">
-  <img class="card-img-top" src="./assets/jesse.jpg"  style="height: 300px" alt="Card image">
+  <img class="card-img-top" src="./images/jesse.jpg"  style="height: 300px" alt="Card image">
   <div class="card-body">
     <h4 class="card-title">jesse</h4>
     <p class="card-text">They offer quality services. You won't regret making a reservation with them. Customer is among their priority in their operations. </p>
    
   </div>
-</div>;
+</div>
 <div class="card" style="width:300px;">
-  <img class="card-img-top" src="./assets/katty.jpg" style="height: 300px" alt="Card image">
+  <img class="card-img-top" src="./images/katty.jpg" style="height: 300px" alt="Card image">
   <div class="card-body">
     <h4 class="card-title">katty</h4>
     <p class="card-text">Making a reservation with Regie motors was one of the choices I made this year. Their cars are very exquisite and so comfortable.</p>
@@ -51,7 +51,7 @@ include 'header.php';
   </div>
 </div>
 <div class="card" style="width:300px">
-  <img class="card-img-top" src="./assets/kelsey.jpg" style="height: 300px" alt="Card image">
+  <img class="card-img-top" src="./images/kelsey.jpg" style="height: 300px" alt="Card image">
   <div class="card-body">
     <h4 class="card-title">kelsey</h4>
     <p class="card-text">I was so pleased by their amazing sevices. they are very accountable and have good customer relations management</p>
