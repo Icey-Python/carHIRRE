@@ -10,8 +10,8 @@
     <div class="row col-lg-4 mt-3 mb-3">
   
   <div class="card-deck" >
-   <div class="card boarder-info p-2" style= "height:500px; width; 500px"> 
-<img class="card-img-top" src= "images/'.$carImage.'" / style="height: 3   00px;">
+   <div class="card boarder-info p-2" style= "height:500px; width:500px;"> 
+<img class="card-img-top" src= "images/'.$carImage.'"  style="height: 3   00px;">
 
 <br>
 <br>
