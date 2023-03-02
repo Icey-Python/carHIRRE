@@ -1,5 +1,21 @@
 <?php
 include 'header.php';
+require "config.php";
+if(isset($_GET['id'])){
+$id =$_GET['id'];
+$sql= "SELECT * FROM cars WHERE id= $id";
+$result= mysqli_query($con,$sql);
+$row = mysqli_fetch_array($result);
+$carName = $row['CarName'];
+$carPrice = $row['carPrice'];
+$NoDays= '?';
+$total= $carPrice*$NoDays;
+$cimage= $row['carImage'];
+}
+else{
+  echo'the car is not available';
+}
+
 ?>
 
 
@@ -15,11 +31,34 @@ include 'header.php';
 <link rel="stylesheet" href="book.css">
     <title>car rental management system</title>
   </head>
-  <body class="bg-info text-white">
-    <div class="container mt-4">
-      <h4> Fill the following details to complete your booking</h4>
-
+  <body>
+    
+<div clas="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 my-5">
+      <h2 class="text-center p-2 text-primary">Fill the following details to complete your booking</h2>
+    <h3>Car Details:</h3>
+    <table class="table table-bordered p-3" width= "500px">
+      <tr>
+        <th>Car Name:</th>
+          <td><?php echo $carName ?></td>
+      </tr>
+      <tr>
+        <th>Charges per Day:</th>
+          <td><?php '.$carPrice.' ?></td>
+      </tr>
+      <tr>
+        <th>Number of days:</th>
+          <td><?php '.$NoDays.' ?></td>
+      </tr>
+      <tr>
+        <th>Total Amount:</th>
+          <td><?php '.$total.' ?></td>
+      </tr>
+      
+    </table>
     </div>
-
+  </div>
+</div>
   </body>
 </html>
