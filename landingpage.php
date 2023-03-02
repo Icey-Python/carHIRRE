@@ -11,7 +11,7 @@
     
   <nav class="navbar navbar-expand-lg bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand text-bg-primary" href="#">Regie motors</a>
+    <a class="navbar-brand text-primary">Regie motors</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -41,7 +41,7 @@
 
 <div>
 <h1 class="landing">WELCOME TO REGIE MOTORS</h1>
-    <p class="text-center text-black"> we offer quality services. Make a reservation with us.
+    <p class="text-center"> we offer quality services. Make a reservation with us.
       <br>
       Thank you.
     </p>

@@ -3,11 +3,13 @@
     margin: 0%;
     box-sizing: border-box;
 }
-.container1{
-  
 
-}
  .card{
    float:left;
    display: block;
+}
+.container{
+  display: grid;
+  grid-template-columns: repeat(1fr 1fr);
+  grid-template-rows: repeat(auto auto);
 }
