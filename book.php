@@ -10,8 +10,7 @@ if(isset($_GET['id'])){
   //var_dump($row);
   //echo($row['carName']);
   $carPrice = $row['carPrice'];
-  $NoDays= "<script> number</script>";
-  echo($NoDays);
+  $NoDays= 0;
   //$total= $NoDays * intval(substr($carPrice,4,strlen($carPrice)-1));
   $cimage= $row['carImage'];
 }
@@ -39,7 +38,7 @@ else{
       <div class="row justify-content-center w-100">
         <div class="col-md-8 my-5">
           <h2 class="text-center p-2 text-primary">Fill the following details to complete your booking</h2>
-          <img src="<?php echo $cimage?>" class="w-100 p-0 pb-3 rounded-1" >
+          <img src="<?php echo $cimage?>" class="w-50 p-0 pb-3 rounded-1 mx-auto" >
         <h3>Car Details:</h3>
         <table class="table table-bordered p-3" width= "500px">
           <tr>
@@ -51,15 +50,32 @@ else{
               <td><?php echo $carPrice ?></td>
           </tr>
         </table>
-        <form>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Number of days</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Number of days" required>
-            </div>
-            <button type="submit" name='calculate_total' class="btn btn-primary">Calculate total</button>
-          </form>
+        <div class="row">
+          <form class="col" action="setTotal.php" method="POST">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Number of days</label>
+                <input type="text" pattern="[0-9]{2}" class="form-control w-auto" id="days"  placeholder="Enter Number of days" max=30 required>
+              </div>
+              <button type="submit" name='calculate_total' class="btn btn-primary">Calculate total</button>
+            </form>
+            <p class="col">Your total price is: <b><span id="price">0</span></b></p>
+        </div>
+       
         </div>
       </div>
     </div>
+    <script>
+        let c_price=`<?php echo $carPrice?>`;
+        let multiplier = document.getElementById('days');
+        let price_total = document.getElementById('price');
+        if((c_price.match(/ksh/gi)).length > 0){
+          c_price = c_price.replace('ksh. ','')
+        }
+        multiplier.oninput=()=>{
+          if(Number(multiplier.value)<=30){
+            price_total.textContent =Number(c_price)*Number(multiplier.value);
+          }
+        }
+    </script>
   </body>
 </html>
