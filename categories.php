@@ -29,6 +29,7 @@ include 'header.php';
   while($row =mysqli_fetch_array($result)){
   
        $id = $row['id'];
+       echo ($id);
       $image =$row['carImage'];
       $name = $row['carName'];
       $price = $row['carPrice'];
@@ -40,7 +41,7 @@ include 'header.php';
        <h4 class='card-tittle'> Name:  $name </h4>
        <br>
        <h4 class='card-tittle'> Price:   $price / day</h4>
-   <a href='order.php? orderid='. $id.'  class= 'btn btn-danger btn-block btn-lg p-2' > Book Now </a>
+   <a href='book.php?id=$id'  class= 'btn btn-danger btn-block btn-lg p-2' > Book Now </a>
    </div>
    </div>
     ";
