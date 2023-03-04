@@ -7,7 +7,8 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 $response = json_decode(curl_exec($ch));
 curl_close($ch);
 $token = $response->access_token;
-   
+$_SESSION['tk'] = $token;
+
 date_default_timezone_set('Africa/Nairobi');
 $processrequestUrl = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
 $callbackurl = 'https://internationalnewsnow.000webhostapp.com/php/callback.php';
@@ -19,10 +20,10 @@ $Timestamp = date('YmdHis');
 
 // ENCRIPT  DATA TO GET PASSWORD
 $Password = base64_encode($BusinessShortCode . $passkey . $Timestamp);
-$phone = '254702716555';
+$phone = '254702716555';//change this to your phone number
 $money = $_SESSION['price'];
 $PartyA = $phone;
-$PartyB = '254702716555';
+$PartyB = '254702716555';//change this to your phone number
 $AccountReference = 'REGGIE MOTORS';
 $TransactionDesc = 'Rent car from REGGIE MOTORS';
 $Amount = $money;
@@ -57,6 +58,18 @@ $data = json_decode($curl_response);
 $CheckoutRequestID = $data->CheckoutRequestID;
 $ResponseCode = $data->ResponseCode;
 $customer_message = $data->CustomerMessage;
+$_SESSION['checkout_id'] = $CheckoutRequestID;
+date_default_timezone_set('Africa/Nairobi');
+$query_url = 'https://sandbox.safaricom.co.ke/mpesa/stkpushquery/v1/query';
+$BusinessShortCode = '174379';
+$Timestamp = date('YmdHis');
+$passkey = "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919";
+// ENCRIPT  DATA TO GET PASSWORD
+$Password = base64_encode($BusinessShortCode . $passkey . $Timestamp);
+//THIS IS THE UNIQUE ID THAT WAS GENERATED WHEN STK REQUEST INITIATED SUCCESSFULLY
+
+$access_token = $token;
+$queryheader = ['Content-Type:application/json', 'Authorization:Bearer ' . $access_token];
 
 
 ?>
@@ -79,7 +92,7 @@ $customer_message = $data->CustomerMessage;
      echo $customer_message;
     ?></p>
     <p class="lead">
-      <a class="btn btn-primary btn-lg" href="./categories.php" role="button">Go home</a>
+      <a class="btn btn-primary btn-lg" href="./checkPaymentStatus.php" role="button">Check Transction Status</a>
     </p>
   </div>
 </body>
