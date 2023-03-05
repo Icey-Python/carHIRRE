@@ -1,10 +1,6 @@
 <?php
-
 include 'header.php';
 ?>
-
-
-
 
 <!doctype html>
 <html lang="en">
@@ -29,18 +25,19 @@ include 'header.php';
   while($row =mysqli_fetch_array($result)){
   
        $id = $row['id'];
+       echo ($id);
       $image =$row['carImage'];
       $name = $row['carName'];
       $price = $row['carPrice'];
        echo"
       <div class='card boarder-info p-2 my-5' style=' width:350px; height:450px;' > 
-      <img class='card-img-top max-width-100%' src=  '$image' style:'height: 100px; position: absolute;  max-width:100%;'>
+      <img class='card-img-top max-width-100% h-50 object-fit-cover' src=  '$image' style:'height: 100px; position: absolute;  max-width:100%;'>
      
    <div class=' card-body'>
        <h4 class='card-tittle'> Name:  $name </h4>
        <br>
        <h4 class='card-tittle'> Price:   $price / day</h4>
-   <a href='order.php? orderid='. $id.'  class= 'btn btn-danger btn-block btn-lg p-2' > Book Now </a>
+   <a href='book.php?id=$id'  class= 'btn btn-danger btn-block btn-lg p-2' > Book Now </a>
    </div>
    </div>
     ";
