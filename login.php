@@ -8,17 +8,36 @@ $password = $_POST['password'];
 
 $sql="select * from users where name='$name' and password = '$password'";
 $results= mysqli_query($con, $sql);
-$res = mysqli_fetch_all($results);
+$row= mysqli_fetch_array($results);
+$num= mysqli_num_rows($results);  
+if($row["usertype"]=="user" && $num > 0 ){
+ $_SESSION['name'] = $name;
+   header('location: landingpage.php');
+}
+elseif($row["usertype"]=="admin" && $num > 0 ){
+  $_SESSION['name'] = $name;
+   header('location: dashboard.php');
+}
+else{
+  echo "invalid input"; 
+}
+}
+/*$res = mysqli_fetch_all($results);
 $num= mysqli_num_rows($results);  
 
 if($num > 0){
     $_SESSION['name'] = $name;
-    header('location: landingpage.php');
-}else{
+  header('location: landingpage.php');
+}
+  elseif($num > 0){
+    $_SESSION['name'] = $name;
+     header('location: dashboard.php');
+}
+else
+{
     echo "invalid input";
 }
-
-}
+}*/
 ?>
 
 

@@ -55,7 +55,7 @@ include 'config.php';
 <?php
 
 
-$sql = "SELECT * FROM cars WHERE booked_for = IS NULL";
+$sql = "SELECT * FROM cars WHERE booked_for IS NULL";
     $result = mysqli_query($con, $sql);
     if($result){
       while($row =mysqli_fetch_array($result)){
@@ -66,11 +66,11 @@ $sql = "SELECT * FROM cars WHERE booked_for = IS NULL";
         $Cbookings = $row['booked_for'];
         echo"
         <tr>
-        <th scope='row'>'.$id.'</th>
-        <td>'.$Cimage.'</td>
-        <td> '.$Cname.'</td>
-        <td>'.$Cprice.'</td>
-        <td>'.$Cbookings.'</td>
+        <th scope='row'>'".$id."'</th>
+        <td>'".$Cimage."'</td>
+        <td> '".$Cname."'</td>
+        <td>'".$Cprice."'</td>
+        <td>'".$Cbookings."'</td>
         <td>
   <button class = 'btn btn-primary'><a href='addcar.php? updateid=
   '.$id.' ' class ='text-light'>update</a></button>

@@ -29,8 +29,8 @@ if(!preg_match('/[a-z]/i' , $_POST['password'])){
     $email= $_POST['email'];
     $password= $_POST['password'];
   
-    $sql ="INSERT INTO users (name, identificationNo, licenceNo, email, password)
-    VALUES('$name', '$identificationNo','','$email','$password')";
+    $sql ="INSERT INTO users (name, identificationNo, email, password)
+    VALUES('$name', '$identificationNo','$email','$password')";
     $result = mysqli_query($con, $sql);
     if($result){
     header('location:login.php');
