@@ -1,32 +1,6 @@
 <?php
 include 'config.php';
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -66,15 +40,15 @@ $sql = "SELECT * FROM cars WHERE booked_for IS NULL";
         $Cbookings = $row['booked_for'];
         echo"
         <tr>
-        <th scope='row'>'".$id."'</th>
-        <td>'".$Cimage."'</td>
-        <td> '".$Cname."'</td>
-        <td>'".$Cprice."'</td>
-        <td>'".$Cbookings."'</td>
+        <th scope='row'>".$id."</th>
+        <td>".$Cimage."</td>
+        <td> ".$Cname."</td>
+        <td>".$Cprice."</td>
+        <td>".$Cbookings."</td>
         <td>
   <button class = 'btn btn-primary'><a href='addcar.php? updateid=
-  '.$id.' ' class ='text-light'>update</a></button>
-  <button class = 'btn btn-danger'><a href='delete.php? deleteid= '.$id.'' class = 'text-light'>delete</a></button>
+  '".$id."' ' class ='text-light'>update</a></button>
+  <button class = 'btn btn-danger'><a href='delete.php? deleteid= '".$id."' class = 'text-light'>delete</a></button>
 </td>
       </tr>";
       }

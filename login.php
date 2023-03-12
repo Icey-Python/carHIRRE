@@ -14,7 +14,7 @@ if($row["usertype"]=="user" && $num > 0 ){
  $_SESSION['name'] = $name;
    header('location: landingpage.php');
 }
-elseif($row["usertype"]=="admin" && $num > 0 ){
+else if($row["usertype"]=="admin" && $num > 0 ){
   $_SESSION['name'] = $name;
    header('location: dashboard.php');
 }
