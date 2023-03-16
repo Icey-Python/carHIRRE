@@ -38,6 +38,7 @@ if (isset($data_to->ResultCode)) {
   } elseif ($ResultCode == '0') {
     $message = "The transaction was successfully";
   }
+  $_SESSION['status'] = $message;
 }
 ?>
 <!DOCTYPE html>
@@ -52,7 +53,7 @@ if (isset($data_to->ResultCode)) {
 <body>
   <div class="jumbotron container">
     <h1 class="display-5"><?php echo $message?></h1>
-    <p class="lead"><?php echo "This is the Payment status of ".$_SESSION['price'] ." to rent the ". $_SESSION['car']." from REGGIE MOTORS";?></p>
+    <p class="lead"><?php echo "This is the Payment status of ".$_SESSION['total_cost'] ." to rent the ". $_SESSION['car']." from REGGIE MOTORS";?></p>
     <hr class="my-4">
     <p><?php 
      echo "CHECKOUT ID: ".$CheckoutRequestID."<br>";
@@ -60,6 +61,7 @@ if (isset($data_to->ResultCode)) {
     ?></p>
     <p class="lead">
       <a class="btn btn-primary btn-lg" href="./categories.php" role="button">Home</a>
+      <a class="btn btn-primary btn-lg" href=<?php echo "./viewReports.php?ref_id=".$_SESSION['id'];?> role="button">Get Report</a>
     </p>
   </div>
 </body>

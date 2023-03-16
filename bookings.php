@@ -1,32 +1,6 @@
 <?php
 include 'config.php';
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -55,7 +29,7 @@ include 'config.php';
 <?php
 
 
-$sql = "SELECT * FROM cars WHERE booked_for IS > 0";
+$sql = "SELECT * FROM cars WHERE booked_for > 0";
     $result = mysqli_query($con, $sql);
     if($result){
       while($row =mysqli_fetch_array($result)){
@@ -66,14 +40,14 @@ $sql = "SELECT * FROM cars WHERE booked_for IS > 0";
         $Cbookings = $row['booked_for'];
         echo"
         <tr>
-        <th scope='row'>'.$id.'</th>
-        <td>'.$Cimage.'</td>
-        <td> '.$Cname.'</td>
-        <td>'.$Cprice.'</td>
-        <td>'.$Cbookings.'</td>
+        <th scope='row'>".$id."</th>
+        <td><img style='width:60px; height:50px; object-fit:cover;' src='".$Cimage."'/></td>
+        <td>".$Cname."</td>
+        <td>".$Cprice."</td>
+        <td>".$Cbookings."</td>
         <td>
  
-  <button class = 'btn btn-danger'><a href='delete.php? deleteid= '.$id.'' class = 'text-light'>delete</a></button>
+  <button class = 'btn btn-danger'><a href='delete.php?deleteid=".$id."' class = 'text-light'>delete</a></button>
 </td>
       </tr>";
       }

@@ -10,6 +10,7 @@ $sql="select * from users where name='$name' and password = '$password'";
 $results= mysqli_query($con, $sql);
 $row= mysqli_fetch_array($results);
 $num= mysqli_num_rows($results);  
+$_SESSION['user_type'] = $row['user_type'];
 if($row["usertype"]=="user" && $num > 0 ){
  $_SESSION['name'] = $name;
    header('location: landingpage.php');
