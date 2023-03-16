@@ -4,7 +4,8 @@
   
 }
 body{
-    background-image: url('./assets/Bjeep.jpg');
+    background-image: url('./assets/Bjeep.jpg'),rgba(0,0,0,0.8);
+    background-blend-mode: normal;
     background-size: cover;
     height: 100vh;
     }
