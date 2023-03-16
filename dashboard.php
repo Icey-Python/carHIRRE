@@ -21,13 +21,13 @@ include'config.php';
  <aside>
     <ul>
         <li>
-            <a href="#">addcar</a>
+            <a href="addCar.php">addcar</a>
         </li>
         <li>
-            <a  href="#">viewcars</a>
+            <a href="viewCars.php">viewcars</a>
         </li>
         <li>
-            <a  href="#">viewbookings</a>
+            <a href="bookings.php">viewbookings</a>
         </li>
        
     </ul>

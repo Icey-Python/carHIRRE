@@ -8,7 +8,7 @@ if(isset($_GET['id'])){
   $sql= "SELECT * FROM cars WHERE id= $id";
   $result= mysqli_query($con,$sql);
   $row = mysqli_fetch_assoc($result);
-  $carName = $row['CarName'];
+  $carName = $row['carName'];
   $_SESSION['car'] = $carName;
   //var_dump($row);
   //echo($row['carName']);

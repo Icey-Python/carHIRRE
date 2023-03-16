@@ -14,12 +14,9 @@ if($row["usertype"]=="user" && $num > 0 ){
  $_SESSION['name'] = $name;
    header('location: landingpage.php');
 }
-else if($row["usertype"]=="admin" && $num > 0 ){
-  $_SESSION['name'] = $name;
-   header('location: dashboard.php');
-}
 else{
-  echo "invalid input"; 
+  $_SESSION['name'] = $name;
+  header('location: dashboard.php');
 }
 }
 /*$res = mysqli_fetch_all($results);
@@ -66,7 +63,7 @@ else
   
   <div class="form-group">
   <label for="Name" class="text-white">Password:</label>
-  <input type="text" class="form-control" id="name1" placeholder="Please enter your Password" name="password" autocomplete="off">
+  <input type="password" class="form-control" id="name1" placeholder="Please enter your Password" name="password" autocomplete="off">
 </div>
 
 <div style="padding-left: 20%; padding-right:20%; padding-top:10px;">
