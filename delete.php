@@ -1,5 +1,9 @@
 <?php
+session_start();
 include 'config.php';
+if(!($_SESSION['user_type'] == 'admin')){
+    header("location:categories.php");
+  }
 if(isset($_GET['deleteid'])){
     $id = $_GET['deleteid'];
     $sql = "DELETE from cars where id =$id";

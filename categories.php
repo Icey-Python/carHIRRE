@@ -1,5 +1,6 @@
 <?php
 include 'header.php';
+
 ?>
 
 <!doctype html>
@@ -16,7 +17,7 @@ include 'header.php';
   </head>
   <body class="bg-info">
     <h1 class="text-center pt-5 pb-5"> Please check our available cars</h1>
-  <div class="container">
+  <div class="container w-50">
   <?php
    include 'config.php';
    $sql = "SELECT * FROM cars";
@@ -25,7 +26,6 @@ include 'header.php';
   while($row =mysqli_fetch_array($result)){
   
        $id = $row['id'];
-       echo ($id);
       $image =$row['carImage'];
       $name = $row['carName'];
       $price = $row['carPrice'];

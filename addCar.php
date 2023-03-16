@@ -1,6 +1,10 @@
 <?php
+session_start();
 include "header.php";
 include 'config.php';
+if(!($_SESSION['user_type'] == 'admin')){
+  header("location:categories.php");
+}
 $msg = "";
 if (isset($_POST['submit'])) {
 
