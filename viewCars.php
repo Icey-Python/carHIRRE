@@ -41,14 +41,13 @@ $sql = "SELECT * FROM cars WHERE booked_for IS NULL";
         echo"
         <tr>
         <th scope='row'>".$id."</th>
-        <td>".$Cimage."</td>
+        <td> <img style='width:60px; height:50px; object-fit:cover;' src='".$Cimage."'/></td>
         <td> ".$Cname."</td>
         <td>".$Cprice."</td>
         <td>".$Cbookings."</td>
         <td>
-  <button class = 'btn btn-primary'><a href='addcar.php? id=
-  '".$id."' ' class ='text-light'>update</a></button>
-  <button class = 'btn btn-danger'><a href='delete.php? deleteid= '".$id."' class = 'text-light'>delete</a></button>
+  <button class = 'btn btn-primary'><a href='addCar.php?id=".$id."' class ='text-light'>update</a></button>
+  <button class = 'btn btn-danger'><a href='delete.php?deleteid='".$id."' class = 'text-light'>delete</a></button>
 </td>
       </tr>";
       }
@@ -57,7 +56,6 @@ $sql = "SELECT * FROM cars WHERE booked_for IS NULL";
 
   </tbody>
 </table> 
-
 
     </div>
   </body>

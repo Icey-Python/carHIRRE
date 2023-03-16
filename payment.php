@@ -20,10 +20,10 @@ $Timestamp = date('YmdHis');
 
 // ENCRIPT  DATA TO GET PASSWORD
 $Password = base64_encode($BusinessShortCode . $passkey . $Timestamp);
-$phone = '254703396015';//change this to your phone number
-$money = $_SESSION['price'];
+$phone = '254702716555';//change this to your phone number
+$money = $_SESSION['total_cost'];
 $PartyA = $phone;
-$PartyB = '254703396015';//change this to your phone number
+$PartyB = '254702716555';//change this to your phone number 254703396015
 $AccountReference = 'REGGIE MOTORS';
 $TransactionDesc = 'Rent car from REGGIE MOTORS';
 $Amount = $money;
@@ -85,7 +85,7 @@ $queryheader = ['Content-Type:application/json', 'Authorization:Bearer ' . $acce
 <body>
   <div class="jumbotron container">
     <h1 class="display-5">Payment to REGGIE MOTORS</h1>
-    <p class="lead"><?php echo "Confirm Payment of ".$_SESSION['price'] ." to rent the ". $_SESSION['car']." from REGGIE MOTORS";?></p>
+    <p class="lead"><?php echo "Confirm Payment of ".$money." to rent the ". $_SESSION['car']." from REGGIE MOTORS";?></p>
     <hr class="my-4">
     <p><?php 
      echo "CHECKOUT ID: ".$CheckoutRequestID."<br>";

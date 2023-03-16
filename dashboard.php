@@ -1,6 +1,9 @@
 <?php
-include'config.php';
-    //include'header.php';
+session_start();
+include 'config.php';
+if(!($_SESSION['user_type'] == 'admin')){
+  header("location:landingpage.php");
+}
 ?>
 <!doctype html>
 <html lang="en">
