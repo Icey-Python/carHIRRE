@@ -41,7 +41,7 @@ $sql = "SELECT * FROM cars WHERE booked_for IS NULL";
         echo"
         <tr>
         <th scope='row'>".$id."</th>
-        <td>".$Cimage."</td>
+        <td> <img style='width:60px; height:50px; object-fit:cover;' src='".$Cimage."'/></td>
         <td> ".$Cname."</td>
         <td>".$Cprice."</td>
         <td>".$Cbookings."</td>
