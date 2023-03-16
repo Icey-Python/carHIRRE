@@ -46,9 +46,8 @@ $sql = "SELECT * FROM cars WHERE booked_for IS NULL";
         <td>".$Cprice."</td>
         <td>".$Cbookings."</td>
         <td>
-  <button class = 'btn btn-primary'><a href='addcar.php? id=
-  '".$id."' ' class ='text-light'>update</a></button>
-  <button class = 'btn btn-danger'><a href='delete.php? deleteid= '".$id."' class = 'text-light'>delete</a></button>
+  <button class = 'btn btn-primary'><a href='addCar.php?id=".$id."' class ='text-light'>update</a></button>
+  <button class = 'btn btn-danger'><a href='delete.php?deleteid='".$id."' class = 'text-light'>delete</a></button>
 </td>
       </tr>";
       }
