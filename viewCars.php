@@ -1,5 +1,6 @@
 <?php
 include 'config.php';
+include 'dashboard.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -11,7 +12,7 @@ include 'config.php';
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
   <body>
-    <div class="container my-5">
+    <div class="container m-xxl-5 my-5 " style="padding-left: 13%;">
 <button class= "btn btn-primary"><a href="addCar.php" class= "text-dark">add car</a></button>
 <table class="table my-2">
   <thead>
