@@ -37,7 +37,7 @@ if(!($_SESSION['user_type'] == 'admin')){
         </div>
         <div class="wrapper bg-white">
         <div class="table-responsive">
-        <table class="table table-borderless">
+        <table class="table table-borderless rounded">
             <thead>
                 <tr class="text-uppercase text-muted">
                     <th scope="col">product</th>
