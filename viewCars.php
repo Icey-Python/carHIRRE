@@ -58,7 +58,6 @@ $sql = "SELECT * FROM cars WHERE booked_for IS NULL";
   </tbody>
 </table> 
 
-
     </div>
   </body>
 </html>
