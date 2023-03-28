@@ -23,8 +23,11 @@ if(!($_SESSION['user_type'] == 'admin')){
 <html>
     <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    </head>
+    <script src="jquery-3.6.3.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>-->
+</head>
     <body>
+        <div id="content">
         <div class="container w-50 bg-light">
         <div class="d-flex flex-column justify-content-center align-items-center" id="order-heading">
         <div class="text-uppercase pt-5">
@@ -92,5 +95,33 @@ if(!($_SESSION['user_type'] == 'admin')){
         dateElem.innerText = currentDate;
 
         </script>
+             
+     <!-- // <button  class="btn btn-success btn-lg d-center"><a href="javascript:generatePDF()" id="btn-print" >generate and print PDF</a> </button>
+    </div>
+   /* <script>
+        async function generatePDF(){
+            document.getElementById("btn-print").innerHTML= "click to download"
+            //downloading code
+           var downloading= document.getElementById("content");
+           var doc =new jsPDF('l','pt')
+
+           await html2canvas(downloading,{
+            width:530
+        }).then (( canvas)=>{
+            doc.addimage(
+                canvas.toDataURL("image/png"), 'PNG', 5, 5, 500, 500,);
+            })
+            doc.save("document.pdf");
+
+            
+        }
+           
+
+*/
+
+        
+    </script>-->
+    </div>
     </body>
+
 </html>

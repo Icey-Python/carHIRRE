@@ -45,7 +45,7 @@ $sql = "SELECT * FROM cars WHERE booked_for IS NULL";
         <td> <img style='width:60px; height:50px; object-fit:cover;' src='".$Cimage."'/></td>
         <td> ".$Cname."</td>
         <td>".$Cprice."</td>
-        <td>".$Cbookings."</td>
+    
         <td>
   <button class = 'btn btn-primary'><a href='addCar.php?id=".$id."' class ='text-light'>update</a></button>
   <button class = 'btn btn-danger'><a href='delete.php?deleteid='".$id."' class = 'text-light'>delete</a></button>
@@ -61,3 +61,4 @@ $sql = "SELECT * FROM cars WHERE booked_for IS NULL";
     </div>
   </body>
 </html>
+// /*<td>".$Cbookings."</td>*/

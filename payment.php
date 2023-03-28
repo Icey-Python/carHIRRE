@@ -20,10 +20,10 @@ $Timestamp = date('YmdHis');
 
 // ENCRIPT  DATA TO GET PASSWORD
 $Password = base64_encode($BusinessShortCode . $passkey . $Timestamp);
-$phone = '254702716555';//change this to your phone number
+$phone = '254703396015';//change this to your phone number
 $money = $_SESSION['total_cost'];
 $PartyA = $phone;
-$PartyB = '254702716555';//change this to your phone number 254703396015
+$PartyB = '254703396015';//change this to your phone number 254703396015
 $AccountReference = 'REGGIE MOTORS';
 $TransactionDesc = 'Rent car from REGGIE MOTORS';
 $Amount = $money;

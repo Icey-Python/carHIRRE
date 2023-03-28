@@ -1,5 +1,7 @@
 <?php
 include 'config.php';
+include 'dashboard.php';
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -20,6 +22,7 @@ include 'config.php';
       <th scope="col">carImage</th>
       <th scope="col">CarName</th>
       <th scope="col">carPrice</th>
+      <th scope = "col">Days</th>
       <th scope = "col">action</th>
     </tr>
   </thead>
@@ -29,7 +32,7 @@ include 'config.php';
 <?php
 
 
-$sql = "SELECT * FROM cars WHERE booked_for > 0";
+$sql = "SELECT * FROM cars  WHERE booked_for > 0 ";
     $result = mysqli_query($con, $sql);
     if($result){
       while($row =mysqli_fetch_array($result)){

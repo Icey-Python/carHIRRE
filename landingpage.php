@@ -24,7 +24,7 @@ if(!isset($_SESSION["name"])){
     <div class="collapse navbar-collapse ul1" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 pl-3">
         <li class="nav-item">
-          <a class="nav-link active text-white" href="#">HOME</a>
+          <a class="nav-link active text-white" href="landingpage.php">HOME</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="categories.php">CATEGORIES</a>
