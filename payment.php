@@ -1,7 +1,7 @@
 <?php
 session_start();
 $ch = curl_init('https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials');
-curl_setopt($ch, CURLOPT_HTTPHEADER,['Authorization: Basic ' . base64_encode('8gdjXLYPRGhiZrOVBSGtCLffqULYSUAq:ZGW2D61xdE3gL30u')
+curl_setopt($ch, CURLOPT_HTTPHEADER,['Authorization: Basic ' . base64_encode('PpcSSpnUP2sKOO6DzkahRI7aZ4EnYFFG:iMkyzWjMZ6MyvUtK')
    ]);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 $response = json_decode(curl_exec($ch));

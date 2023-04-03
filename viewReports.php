@@ -35,7 +35,7 @@ if(!($_SESSION['user_type'] == 'admin')){
         </div>
         <div class="h4" id="date"></div>
         <div class="pt-1">
-        <p><b class="text-dark"><?php echo "Order #".$_SESSION['checkout_id']." is currently";?> processing</b></p>
+        <p><b class="text-dark"><?php echo "Order #".$_SESSION['checkout_id']." was ".$_SESSION['report'];?></b></p>
         </div>
         </div>
         <div class="wrapper bg-white">

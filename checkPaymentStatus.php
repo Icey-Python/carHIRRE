@@ -31,14 +31,19 @@ if (isset($data_to->ResultCode)) {
   $ResultCode = $data_to->ResultCode;
   if ($ResultCode == '1037') {
     $message = "Timeout in completing transaction";
+    $report = "Timed out";
   } elseif ($ResultCode == '1032') {
     $message = "Transaction  was cancelled by user";
+    $report = "Cancelled";
   } elseif ($ResultCode == '1') {
     $message = "Insufficient balance for the transaction";
+    $report ="failed";
   } elseif ($ResultCode == '0') {
     $message = "The transaction was successfully";
+    $report = "successful and is in progress";
   }
   $_SESSION['status'] = $message;
+  $_SESSION['report'] = $report;
 }
 ?>
 <!DOCTYPE html>
