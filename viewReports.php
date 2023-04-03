@@ -93,34 +93,16 @@ if(!($_SESSION['user_type'] == 'admin')){
         let currentDate = new Date().toJSON().slice(0, 10);
         let dateElem = document.querySelector('#date')
         dateElem.innerText = currentDate;
-
+        <form action="" method="post">
+<input type="submit" name="download" value="Download PDF" />
+</form>
+ 
         </script>
-             
-     <!-- // <button  class="btn btn-success btn-lg d-center"><a href="javascript:generatePDF()" id="btn-print" >generate and print PDF</a> </button>
-    </div>
-   /* <script>
-        async function generatePDF(){
-            document.getElementById("btn-print").innerHTML= "click to download"
-            //downloading code
-           var downloading= document.getElementById("content");
-           var doc =new jsPDF('l','pt')
-
-           await html2canvas(downloading,{
-            width:530
-        }).then (( canvas)=>{
-            doc.addimage(
-                canvas.toDataURL("image/png"), 'PNG', 5, 5, 500, 500,);
-            })
-            doc.save("document.pdf");
-
-            
-        }
-           
-
-*/
-
-        
-    </script>-->
+ <form action="download.php" method="post">
+<input type="submit" name="download" value="Download PDF"  />
+</form>
+ 
+</div>
     </div>
     </body>
 
