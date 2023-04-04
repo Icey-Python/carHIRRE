@@ -6,10 +6,13 @@ if(isset($_POST['submit'])){
 $name = $_POST['name'];
 $password = $_POST['password'];
 
-$sql="select * from users where name='$name' and password = '$password'";
+$sql="select * from users where name='$name'";
 $results= mysqli_query($con, $sql);
 $row= mysqli_fetch_array($results);
 $num= mysqli_num_rows($results);  
+if($num >0){
+  password_verify($password,PASSWORD_DEFAULT);
+}
 $_SESSION['user_type'] = $row['user_type'];
 
 if($row["usertype"]!=" "){

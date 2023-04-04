@@ -27,7 +27,7 @@ if(!preg_match('/[a-z]/i' , $_POST['password'])){
    $identificationNo=$_POST['identificationNo'];
    // $licenceNo= $_POST['licenceNo'];
     $email= $_POST['email'];
-    $password= $_POST['password'];
+    $password=  password_hash($_POST['password'],PASSWORD_DEFAULT);
   
     $sql ="INSERT INTO users (name, identificationNo, email, password)
     VALUES('$name', '$identificationNo','$email','$password')";
