@@ -15,9 +15,10 @@ include 'header.php';
     <link rel="stylesheet" href="./categories.php">
     <title>car rental management system</title>
   </head>
-  <body class="bg-info">
-    <h1 class="text-center pt-5 pb-5"> Please check our available cars</h1>
-  <div class="container w-50">
+  <body style="background-image: url('./assets/machine9.jpg'); background-blend-mode: normal;
+    background-size: cover; height: 100vh;">
+    <h1 class="text-center text-light pt-5 pb-5"> Please check our available cars</h1>
+  <div class="container w-100 style='display:block;'float:left;'">
   <?php
    include 'config.php';
    $sql = "SELECT * FROM cars";
@@ -30,7 +31,8 @@ include 'header.php';
       $name = $row['carName'];
       $price = $row['carPrice'];
        echo"
-      <div class='card boarder-info p-2 my-5' style=' width:350px; height:450px;' > 
+     
+      <div class='card boarder-info p-2 my-5 mx-3' style=' width:350px; height:450px; float:left;' > 
       <img class='card-img-top max-width-100% h-50 object-fit-cover' src=  '$image' style:'height: 100px; position: absolute;  max-width:100%;'>
      
    <div class=' card-body'>
@@ -40,6 +42,8 @@ include 'header.php';
    <a href='book.php?id=$id'  class= 'btn btn-danger btn-block btn-lg p-2' > Book Now </a>
    </div>
    </div>
+   </div>
+
     ";
   }
 }
