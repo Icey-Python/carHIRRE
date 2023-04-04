@@ -59,7 +59,7 @@ $sql = "SELECT * FROM users";
         <td>
         <button class = 'btn btn-primary'><a href='signuppage.php?updateid=".$id."' class ='text-light'>update</a></button>
         
-        <button class = 'btn btn-danger'><a href='deleteusers.php?deleteid='".$id."' class = 'text-light'>delete</a></button>
+        <button class = 'btn btn-danger'><a href='deleteUsers.php?deleteid=".$id."' class = 'text-light'>delete</a></button>
       </td>
       </tr>";
       }
