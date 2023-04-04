@@ -20,7 +20,7 @@ include'config.php';
     </header>
  <aside>
     <ul>
-    <li>
+        <li>
             <a href="viewUsers.php" class = "active" >manageUsers</a>
         </li>
         <li>

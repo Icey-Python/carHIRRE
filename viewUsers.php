@@ -13,7 +13,9 @@ include 'dashboard.php';
 </head>
   <body>
     <div class="container mx-5 my-5 " style="padding-left:13%;">
-    <button class= "btn btn-primary"><a href="signuppage.php" class= "text-dark">add user</a></button>
+    <button class= "btn btn-primary">
+      <a href="signuppage.php" class= "text-dark">add user</a>
+    </button>
 <table class="table my-2">
   <thead>
     <tr>
@@ -21,7 +23,7 @@ include 'dashboard.php';
       <th scope="col">NAME</th>
       <th scope="col">IDNO.</th>
       <th scope="col">EMAIL</th>
-      <th scope="col">PASSWORD</th>
+      <!-- <th scope="col">PASSWORD</th> it is risky to expose the users passwords -->
       <th scope="col">USERTYPE</th>
       <th scope = "col">ACTION</th>
       
@@ -41,7 +43,7 @@ $sql = "SELECT * FROM users";
         $name = $row['name'];
         $identify= $row['identificationNo'];
         $email = $row['email'];
-        $password = $row['password'];
+        // $password = $row['password'];
         $usertype = $row['usertype'];
         echo"
         <tr>
@@ -53,13 +55,12 @@ $sql = "SELECT * FROM users";
         
         <td> ".$email."</td>
         
-        <td> ".$password."</td
-        <td> ".$usertype."</td
+        <td> ".$usertype."</td>
         <td>
-  <button class = 'btn btn-primary'><a href='signuppage.php?updateid=".$id."' class ='text-light'>update</a></button>
-  
-  <button class = 'btn btn-danger'><a href='deleteusers.php?deleteid='".$id."' class = 'text-light'>delete</a></button>
-</td>
+        <button class = 'btn btn-primary'><a href='signuppage.php?updateid=".$id."' class ='text-light'>update</a></button>
+        
+        <button class = 'btn btn-danger'><a href='deleteusers.php?deleteid='".$id."' class = 'text-light'>delete</a></button>
+      </td>
       </tr>";
       }
     }
