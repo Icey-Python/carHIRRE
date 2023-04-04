@@ -12,34 +12,21 @@ $row= mysqli_fetch_array($results);
 $num= mysqli_num_rows($results);  
 $_SESSION['user_type'] = $row['user_type'];
 
-if($row["usertype"]=="user" && $num > 0 ){
-   $_SESSION['name'] = $name;
-   header('location: landingpage.php');
-}
-elseif($row["usertype"]=="admin" && $num > 0){
-  $_SESSION['name'] = $name;
-  header('location: dashboard.php');
+if($row["usertype"]!=" "){
+  if($row["usertype"]=="user"){
+    $_SESSION['name'] = $name;
+    header('location: landingpage.php');
+  }
+  else{
+    $_SESSION['name'] = $name;
+    header('location: dashboard.php');
+  }
 }else{
   header('location: signuppage.php');
 }
 }
 
-/*$res = mysqli_fetch_all($results);
-$num= mysqli_num_rows($results);  
 
-if($num > 0){
-    $_SESSION['name'] = $name;
-  header('location: landingpage.php');
-}
-  elseif($num > 0){
-    $_SESSION['name'] = $name;
-     header('location: dashboard.php');
-}
-else
-{
-    echo "invalid input";
-}
-}*/
 ?>
 
 
