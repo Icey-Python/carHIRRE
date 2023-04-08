@@ -3,7 +3,7 @@ session_start();
 include "config.php";
 if(!($_SESSION['user_type'] == 'admin')){
     // user can view only a single report of the current purchase
-  //  $car_id = $_GET['ref_id'];
+    $car_id = $_GET['ref_id'];
     $sql = "SELECT * FROM cars WHERE id='$car_id'";
     $result = mysqli_query($con, $sql);
     if($result){
@@ -19,16 +19,5 @@ if(!($_SESSION['user_type'] == 'admin')){
     //admin can view all
   }
 
-require('./fpdf/fpdf.php');
-$pdf= new FPDF();
-//add  a new page to the document
-$pdf->AddPage();
-//set font for the document
-$pdf->SetFont('Arial', 'B', 16);
-
-$pdf->Cell(0, 10, 'Regie motors',0, 1, 'c' );
-
-
-
-$pdf->Output('receipt.pdf', 'D');
+ 
 ?>
