@@ -84,24 +84,10 @@ if(!($_SESSION['user_type'] == 'admin')){
         <div class="pl-3 font-weight-bold h4">Terms and conditions</div>
         <div class="d-sm-flex justify-content-between rounded my-3 subscriptions">
         When renting a car, drivers must be 21 years of age or older, possess a valid driver’s license, and present a major credit card. Additional drivers must meet the same requirements. Renters must return the car on the date and time specified in the rental agreement, obey all local laws and regulations, and not use the car for illegal activities. Financial responsibility for any damage to the car is the responsibility of the renter, and they must pay all taxes, fees, surcharges, and any additional services requested. The car must be returned with the same level of fuel as when it was picked up
+    </div>
+    <button type="button" class="btn btn-secondary mb-5"><a href="Reports.php" class = 'text-white text-decoration-none'>Download PDF</a></button>
         </div>
         </div>
-        </div>
-        </div>
-        </div>
-        <script>
-        let currentDate = new Date().toJSON().slice(0, 10);
-        let dateElem = document.querySelector('#date')
-        dateElem.innerText = currentDate;
-        <form action="" method="post">
-<input type="submit" name="download" value="Download PDF" />
-</form>
- 
-        </script>
- <form action="download.php" method="post">
-<!--<input type="submit" name="download"-->
- <button ><a href='viewReports.php' class = 'text-dark'>Download pdf</a></button>
-</form>
  
 </div>
     </div>
