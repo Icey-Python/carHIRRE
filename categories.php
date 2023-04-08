@@ -18,7 +18,8 @@ include 'header.php';
   <body style="background-image: url('./assets/machine9.jpg'); background-blend-mode: normal;
     background-size: cover; height: 100vh;">
     <h1 class="text-center text-light pt-5 pb-5"> Please check our available cars</h1>
-  <div class="container w-100 style='display:block;'float:left;'">
+  <div class="container w-100 style='margin:50px;'">
+    <button ></button>
   <?php
    include 'config.php';
    $sql = "SELECT * FROM cars";
@@ -31,8 +32,8 @@ include 'header.php';
       $name = $row['carName'];
       $price = $row['carPrice'];
        echo"
-     
-      <div class='card boarder-info p-2 my-5 mx-3' style=' width:350px; height:450px; float:left;' > 
+        <div class= 'col-xxl-10'>
+      <div class='card boarder-info  my-3 mx-3' style=' width:350px; height:450px; float:left;' > 
       <img class='card-img-top max-width-100% h-50 object-fit-cover' src=  '$image' style:'height: 100px; position: absolute;  max-width:100%;'>
      
    <div class=' card-body'>
@@ -43,7 +44,7 @@ include 'header.php';
    </div>
    </div>
    </div>
-
+</div>
     ";
   }
 }

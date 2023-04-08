@@ -3,7 +3,7 @@ session_start();
 include "header.php";
 include 'config.php';
 if(!($_SESSION['user_type'] == 'admin')){
-  header("location:categories.php");
+//  header("location:categories.php");
 }
 $msg = "";
 if (isset($_POST['submit'])) {
@@ -79,6 +79,7 @@ if (isset($_POST['submit'])) {
 </div>
 <div class="row justify-content-center">
     <div class="col-md-6 mt-3 p-4 bg-light text-center rounded">
+    <a href="dashboard.php" class="btn btn-warning btn-block btn-lg ">Go to dashboard page</a>
 <a href="categories.php" class="btn btn-warning btn-block btn-lg ">Go to the product page</a>
     </div>
 </div>

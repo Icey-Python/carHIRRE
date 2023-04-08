@@ -99,7 +99,8 @@ if(!($_SESSION['user_type'] == 'admin')){
  
         </script>
  <form action="download.php" method="post">
-<input type="submit" name="download" value="Download PDF"  />
+<!--<input type="submit" name="download"-->
+ <button ><a href='viewReports.php' class = 'text-dark'>Download pdf</a></button>
 </form>
  
 </div>

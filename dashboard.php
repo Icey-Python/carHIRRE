@@ -20,8 +20,8 @@ include'config.php';
     </header>
  <aside>
     <ul>
-        <li>
-            <a href="viewUsers.php" class = "active" >manageUsers</a>
+        <li class = " active">
+            <a class = " active"href="viewUsers.php">manageUsers</a>
         </li>
         <li>
             <a href="addCar.php">addcar</a>

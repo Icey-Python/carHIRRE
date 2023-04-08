@@ -2,7 +2,7 @@
 session_start();
 include 'config.php';
 if(!($_SESSION['user_type'] == 'admin')){
-    header("location:categories.php");
+    header("location:viewCars.php");
   }
 if(isset($_GET['deleteid'])){
     $id = $_GET['deleteid'];
