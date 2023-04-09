@@ -14,7 +14,8 @@ if(isset($_GET['id'])){
   //echo($row['carName']);
   $carPrice = $row['carPrice'];
   $_SESSION['price'] = $carPrice;
-  $NoDays= 0;
+  $NoDays= $_POST['days'];
+  $_SESSION['days'] = $NoDays;
   //$total= $NoDays * intval(substr($carPrice,4,strlen($carPrice)-1));
   $cimage= $row['carImage'];
 }
