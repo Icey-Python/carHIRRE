@@ -17,7 +17,7 @@ $passkey = "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919";
 
 $BusinessShortCode = '174379';
 $Timestamp = date('YmdHis');
-
+$_SESSION['time'] = $Timestamp;
 // ENCRIPT  DATA TO GET PASSWORD
 $Password = base64_encode($BusinessShortCode . $passkey . $Timestamp);
 $phone = '254703396015';//change this to your phone number
@@ -80,7 +80,7 @@ $queryheader = ['Content-Type:application/json', 'Authorization:Bearer ' . $acce
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Payment for <?php echo $_SESSION['name'];?></title>
+    <title>Payment for <?php echo $_SESSION['car'];?></title>
 </head>
 <body>
   <div class="jumbotron container">
