@@ -11,7 +11,7 @@
     
   <nav class="navbar navbar-expand-lg bg-dark">
   <div class="container-fluid">
-
+    <img src="./assets/logo.png" class="m-2" style="width:100px" alt="">
     <a class="navbar-brand text-primary" href="./landingpage.php">Regie motors</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
