@@ -22,7 +22,7 @@ if($row["usertype"]!=" "){
   }
   else{
     $_SESSION['name'] = $name;
-    header('location: dashboard.php');
+    header('location: viewUsers.php');
   }
 }else{
   header('location: signuppage.php');
