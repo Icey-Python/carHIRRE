@@ -11,11 +11,11 @@ $pdf->SetTextColor(67, 66, 80);
 ##############################################################################################
 //replace the path with the paths to Receipt Invoice in assets/Receipt
 // right click on the image and click on copy path then paste here
-$pdf->Image('/opt/lampp/htdocs/CarHire/carHIRRE/assets/Receipt/Receipt Invoice.png', 0, 0, 210, 0);
+$pdf->Image('./assets/Receipt/Receipt Invoice.png', 0, 0, 210, 0);
 
 //replace the path with the paths to Mpesa logo in assets/Receipt
 // right click on the image and click on copy path then paste here
-$pdf->Image('/opt/lampp/htdocs/CarHire/carHIRRE/assets/Receipt/MPESA_logo.png', 140, 155, 20, 0);
+$pdf->Image('./assets/Receipt/MPESA_logo.png', 140, 155, 20, 0);
 
 ##############################################################################################
 //receiptNumber

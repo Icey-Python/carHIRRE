@@ -18,10 +18,10 @@ include'config.php';
 <a href="logout.php" class="btn btn-primary">logout</a>
 </div>
     </header>
- <aside>
+ <aside style="padding-top:5px; height:100%; ">
     <ul>
-        <li class = " active">
-            <a class = " active"href="viewUsers.php">manageUsers</a>
+        <li>
+            <a  class= "active" href="viewUsers.php" class = "active">manageUsers</a>
         </li>
         <li>
             <a href="addCar.php">addcar</a>
@@ -36,8 +36,7 @@ include'config.php';
     </ul>
  </aside>
 
-
-    
+ <!--<img src="./assets/redjeep2.jpg" style="margin-left:16%; width:100%; height: 100vh;"/>-->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   </body>
