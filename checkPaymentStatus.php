@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'config.php';
 date_default_timezone_set('Africa/Nairobi');
 $query_url = 'https://sandbox.safaricom.co.ke/mpesa/stkpushquery/v1/query';
 $BusinessShortCode = '174379';
@@ -44,6 +45,10 @@ if (isset($data_to->ResultCode)) {
   }
   $_SESSION['status'] = $message;
   $_SESSION['report'] = $report;
+
+  $sql = "INSERT INTO `report`( `transaction_id`, `status`, `name`, `car name`, `car price`) VALUES ('$CheckoutRequestID','$message','".$_SESSION['name']."','".$_SESSION['car']."','".$_SESSION['total_cost']."')";
+
+  $qry = mysqli_query($con, $sql);
 }
 ?>
 <!DOCTYPE html>
