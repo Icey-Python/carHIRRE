@@ -3,7 +3,9 @@
   margin: 0%; 
   box-sizing: border-box; 
 }
-
+body{
+    overflow-y: hidden;
+}
 
 .header{
     background-color:skyblue ;

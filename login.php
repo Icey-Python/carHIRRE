@@ -9,9 +9,9 @@ $password = $_POST['password'];
 $sql="select * from users where name='$name'";
 $results= mysqli_query($con, $sql);
 $row= mysqli_fetch_array($results);
-$num= mysqli_num_rows($results);  
+  
 if($num >0){
-  password_verify($password,PASSWORD_DEFAULT);
+  if(password_verify($password,PASSWORD_DEFAULT));
 }
 $_SESSION['user_type'] = $row['user_type'];
 
@@ -20,12 +20,12 @@ if($row["usertype"]!=" "){
     $_SESSION['name'] = $name;
     header('location: landingpage.php');
   }
-  else{
+  elseif($row["usertype"]=="admin"){
     $_SESSION['name'] = $name;
     header('location: viewUsers.php');
+  }else{
+    header('location: signuppage.php');
   }
-}else{
-  header('location: signuppage.php');
 }
 }
 
