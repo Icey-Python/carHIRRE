@@ -35,7 +35,9 @@ include'config.php';
         <li>
             <a href="bookings.php">viewbookings</a>
         </li>
-       
+        <li>
+            <a href="viewPayments.php">viewPayments</a>
+        </li>
         <img src="./assets/logo.png" class="mt-5" style="width:150px" alt="">
         <h5>REGGIE MOTORS</h5>
     </ul>
