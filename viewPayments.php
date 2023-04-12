@@ -13,9 +13,10 @@ include 'dashboard.php';
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
   <body>
-    <div class="container my-5">
+    <div class="container d-flex justify-content-end" style="width:60%;height:100vh;overflow-y:scroll;-ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */">
 <!--<button class= "btn btn-primary"><a href="addCar.php" class= "text-dark">add car</a></button>-->
-<table class="table my-2">
+<table class="table " style="font-size:16px;">
   <thead>
     <tr>
       <th scope="col">id</th>
@@ -31,21 +32,19 @@ include 'dashboard.php';
   
 <?php
 
-
-$sql = "SELECT * FROM cars  WHERE status = the transaction was successfully ";
+    $sql = "SELECT * FROM report";
     $result = mysqli_query($con, $sql);
-    if($result){
       while($row =mysqli_fetch_array($result)){
         $id = $row['id'];
-        $tid = $row['transaction_Id'];
+        $tid = $row['transaction_id'];
         $status = $row['status'];
         $name = $row['name'];
-        $cname = $row['carName'];
+        $cname = $row['car name'];
         $cprice= $row['car price'];
         echo"
         <tr>
         <th scope='row'>".$id."</th>
-        <td>'.$tid.'</td>
+        <td style='font-size:14px;'>".$tid."</td>
         <td>".$status."</td>
         <td>".$name."</td>
         <td>".$cname."</td>
@@ -53,7 +52,7 @@ $sql = "SELECT * FROM cars  WHERE status = the transaction was successfully ";
         
       </tr>";
       }
-    }
+    
 ?>
 
   </tbody>
